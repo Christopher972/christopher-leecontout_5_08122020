@@ -1,0 +1,28 @@
+Body 
+{
+    background-color: #e2dfdf;
+}
+
+
+header, footer
+{
+    background-color: #9370DB;
+}
+
+h1
+{
+    color :#6a46b3;
+    font-weight: bold;
+}
+
+.list-middot > li:not(:last-child) ::after
+{
+    content:"\00b7";
+    margin: 1rem;
+    color:black;
+}
+ 
+a
+{
+    color: black;
+}
