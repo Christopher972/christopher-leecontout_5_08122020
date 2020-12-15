@@ -12,7 +12,7 @@ function get (url){
               }
           }
       };
-      request.send ();
+      request.send();
   });
   return promise;
 }
@@ -58,11 +58,10 @@ function addFigureToFixDisplay(section){
  
  get("http://localhost:3000/api/cameras")
   .then (function (response) {
-    console.log (response);
     const section = document.getElementsByClassName("row");
 
-//////////////////////////////////// Cadre de présentaion des appareils photos /////////////////////////////////////
-  for (let i=0; i< response.length; i= i + 1 ){
+////////////////////////////////////  Tableau des appareils photos /////////////////////////////////////
+  for (let i=0; i< response.length; i++){
     addProduct (response[i], section);  
   }
   if (response.lenght % 2 === 1){
