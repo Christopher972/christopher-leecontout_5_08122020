@@ -31,3 +31,9 @@ select
 {
     display: flex;
 }
+
+button
+{
+ background-color: #9370DB;
+ color:white;
+}
