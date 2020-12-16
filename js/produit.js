@@ -23,8 +23,6 @@ class Product{
         this.id = id;
         this.lenses = lenseSelected;
     }
-       
-        
 }
 
 ////////////////////////////////////// Id récupré dans l'url //////////////////////////////
@@ -50,7 +48,7 @@ function addToBasket(lenseSelected) {
 
 ///////////// Information du Produit dans le code HTML /////////
 function addProductInfo(response){
-    const container = document.getElementById("focus_product");
+    const container = document.getElementById("product_focus");
 
     const figure = document.createElement("figure");
     figure.setAttribute( "class","product offset-1 col-10 col-md-6 offset-md-3 mt-5 mb-5 p-3 border border-dark shadow");
@@ -61,13 +59,14 @@ function addProductInfo(response){
 
     const h2 = document.createElement("h2");
     h2.innerHTML = response.name;
-    h2.setAttribute("class","product-title text-center mb-4 ");
+    h2.setAttribute("class","product_title text-center mb-4 ");
 
     const figcaption =document.createElement("figacaption");
     figcaption.innerHTML = response.description;
 
     const price = document.createElement("p");
     price.innerHTML = response.price + "€";
+    price.setAttribute("class","product_price");
 
 /////////////////// Choix des lentilles /////////////////////////
     const lenses = document.createElement("select");
