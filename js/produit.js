@@ -36,16 +36,16 @@ function getId() {
 
 ///////////////////////////////////// Affichage du nombre d'articles dans le pannier ///////////////////
 function addToBasket(lenseSelected) {
-    let basketContent = JSON.parse(localStorage.getItem("basketContent"));
-    if (basketContent === null) {
-        basketContent = [];
+    let basketContents = JSON.parse(localStorage.getItem("basketContents"));
+    if (basketContents === null) {
+        basketContents = [];
     }
 
 //////////////////////////////// produit ajouté au local storage //////////////////
     let product = new Product(id,lenseSelected);
 
-    basketContent.push(product);
-    localStorage.setItem ("basketContent",JSON.stringify(basketContent));
+    basketContents.push(product);
+    localStorage.setItem ("basketContents",JSON.stringify(basketContents));
 }
 
 ///////////// Information du Produit dans le code HTML /////////
