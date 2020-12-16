@@ -21,8 +21,7 @@ function get (url){
 function addProduct (responseProduct,section){
   const figure = document.createElement("figure") ;
   figure.innerHTML = responseProduct.name;
-  figure.setAttribute ("class", "col-md-5 product-border mt-5 col-sm-6 mr-4 ml-4 border border-dark shadow");
-
+  figure.setAttribute ("class", "col-md-5 product mt-5 col-sm-6 mr-4 ml-4 border border-dark shadow");
 
   const img = document.createElement("img");
   img.setAttribute ("src", responseProduct.imageUrl);
@@ -31,15 +30,17 @@ function addProduct (responseProduct,section){
   const figcaption = document.createElement("figcaption");
   figcaption.innerHTML = responseProduct.description;
 
-
   const lenses = document.createElement("p");
   lenses.innerHTML = "Choix des lentilles: " + responseProduct.lenses;
 
   const price = document.createElement("p");
   price.innerHTML = responseProduct.price + "€";
+  price.setAttribute ("class","product_price");
 
   const link = document.createElement("a");
   link.setAttribute ("href","produit.html?id=" + responseProduct._id);
+
+///////////////////////////////// Arborescence des balises////////////////////////////////////
 
   section[2].appendChild(figure);
   figure.appendChild(link);
@@ -71,6 +72,6 @@ function addFigureToFixDisplay(section){
   .catch(function (err){
     console.log (err);
     if (err === 0){
-      alert ("serveur HS");
+      alert ("serveur Hors Service");
     }
   });

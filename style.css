@@ -37,3 +37,10 @@ button
  background-color: #9370DB;
  color:white;
 }
+
+.product_price
+{
+    font-weight: bold;
+}
+
+
