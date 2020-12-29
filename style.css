@@ -32,15 +32,20 @@ select
     display: flex;
 }
 
-button
-{
- background-color: #9370DB;
- color:white;
-}
-
-.product_price
+.product_price,option,label,#erreur
 {
     font-weight: bold;
+}
+
+.help-block
+{
+text-align:center;
+}
+
+
+#emptyBasket, #infoBasket
+{ 
+    display: none ;
 }
 
 
