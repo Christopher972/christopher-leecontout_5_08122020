@@ -37,15 +37,13 @@ select
     font-weight: bold;
 }
 
-.help-block
-{
-text-align:center;
-}
-
-
 #emptyBasket, #infoBasket
 { 
     display: none ;
+}
+
+#sectionConfirmation{
+    border: 25px solid ;
 }
 
 
