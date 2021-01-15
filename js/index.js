@@ -1,4 +1,5 @@
 ///////////// Carte Produit dans le code HTML /////////
+
 function addProductsList(products,section){
   const figure = document.createElement("figure") ;
   figure.innerHTML = products.name;
@@ -24,6 +25,7 @@ function addProductsList(products,section){
   button.innerHTML ="Détails";
 
   ///////////////////////////////// Arborescence des balises////////////////////////////////////
+
   section[1].appendChild(figure);
   figure.appendChild(img);
   figure.appendChild(figcaption);
@@ -33,11 +35,13 @@ function addProductsList(products,section){
 }
 
 //////////////////////////////////// Requête envoyée à l'API et affichage des produits/////////////////
+
 get("http://localhost:3000/api/cameras")
 .then (function (products) {
 const section = document.getElementsByClassName("row");
 
 ////////////////////////////////////  Tableau des appareils photos /////////////////////////////////////
+
 for (let i=0; i< products.length; i++){
   addProductsList (products[i],section);  
   }
