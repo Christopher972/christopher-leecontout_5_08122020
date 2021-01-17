@@ -13,14 +13,20 @@ function addToBasket(lenseSelected, quantityProduct) {
 ////////////////// Affichage de l'état panier sur la page et dans l'onglet nav ///////////////
 
 function showBasket(){
-
-    if(basketProduct.length == 0 ){
+    let quantityBasket = document.getElementById("quantityBasket");
+    if(basketProduct == 0 ){
+        quantityBasket.innerHTML = "0" ;
         document.getElementById("emptyBasket").style.display ="block";
         console.log("le panier est vide");
     }else{
+        let numberArticle = 0;
         document.getElementById("infoBasket").style.display ="block";
-        let quantityBasket = document.getElementById("quantityBasket");
-        quantityBasket.innerHTML = basketProduct.length;
+        JSON.parse(localStorage.getItem("basketContents")).forEach((camera)=>{
+            numberArticle += parseInt(camera.quantity);
+            quantityBasket.textContent = numberArticle;
+           
+        });
+        
         console.log("le panier est plein");
     }
 }

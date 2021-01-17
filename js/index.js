@@ -3,7 +3,7 @@
 function addProductsList(products,section){
   const figure = document.createElement("figure") ;
   figure.innerHTML = products.name;
-  figure.setAttribute ("class", "col-md-5 products mt-5 col-sm-6 mr-4 ml-4 border border-dark shadow");
+  figure.setAttribute ("class", "col-md-5 products mt-5 col-sm-6 mr-4 ml-4");
 
   const img = document.createElement("img");
   img.setAttribute ("src", products.imageUrl);
@@ -22,7 +22,7 @@ function addProductsList(products,section){
   const button = document.createElement("a");
   button.setAttribute ("href","produit.html?id=" + products._id);
   button.setAttribute ("class","btn btn-dark offset-4 col-4 mb-3");
-  button.innerHTML ="Détails";
+  button.innerHTML ="- Détails -";
 
   ///////////////////////////////// Arborescence des balises////////////////////////////////////
 

@@ -1,5 +1,7 @@
+///////// Affichage de la commande sur la page ///////
+
 function addOrderPage(){
-    const order = JSON.parse(localStorage.getItem("order")); // récuperation de l'ID dans le local storage
+    const order = JSON.parse(localStorage.getItem("order")); // récuperation de l'ID et du totalPrice dans le local storage
     const confirmation = document.getElementById("sectionConfirmation");
     const message = document.createElement("h3");
     const price = document.createElement("h3");
@@ -8,7 +10,8 @@ function addOrderPage(){
     message.setAttribute("class", "confirmation-title, text-center");
     price.setAttribute( "class","confirmation-Price, text-center pt-4");
 
-////////////// Arborescence//////////////
+    ////////////// Arborescence//////////////
+
     confirmation.appendChild(message);
     confirmation.appendChild(price);
 

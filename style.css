@@ -1,18 +1,22 @@
 Body 
 {
-    background-color: #e2dfdf;
+    background-image:url(img/papierPeintBeige.jpg);
 }
-
 
 header, footer
 {
-    background-color: #9370DB;
+    background-color: #9470db;
 }
 
 h1
 {
     color :#6a46b3;
     font-weight: bold;
+}
+
+figure, #sectionConfirmation, #emptyBasket
+{
+    box-shadow: 6px 4px 7px 6px rgb(78, 77, 77);
 }
 
 .list-middot > li:not(:last-child) ::after
@@ -32,9 +36,14 @@ select
     display: flex;
 }
 
-.product_price,option,label,#erreur
+.product_price,option,label
 {
     font-weight: bold;
+}
+
+#bouton,.btn, h1, h2, h4, a
+{
+    font-style:italic;
 }
 
 #emptyBasket, #infoBasket
@@ -42,8 +51,5 @@ select
     display: none ;
 }
 
-#sectionConfirmation{
-    border: 25px solid ;
-}
 
 
