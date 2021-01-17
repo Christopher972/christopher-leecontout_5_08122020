@@ -4,7 +4,7 @@ let total = 0;
 
 /////////////Affichage des articles du panier dans la page/////////////
 
-function addBasketProduct(camera, basketInfo ){
+function addBasketProduct(camera, basketInfo){
      
     const tabLine = document.createElement("tr");
 
@@ -66,8 +66,9 @@ function addBasketProduct(camera, basketInfo ){
         if(lessQuantity <= 1){
             document.querySelector(".quantityLess").style.display ="none";
         }
-
+        showBasket();
     });
+
 
     ///////// Pour ajouter une quantité supplémentaire dans le panier //////
 
@@ -80,6 +81,7 @@ function addBasketProduct(camera, basketInfo ){
         if(moreQuantity > 1){
             document.querySelector(".quantityLess").style.display ="inline";
         }
+        showBasket();
     });
 
     /////////// Arborescence des elements //////////
@@ -118,47 +120,46 @@ for(let i = 0; i< basketProduct.length; i++){
 
 function checkInputs(){
     document.getElementById("form").reportValidity();
-  }
+}  
   
-  let formulaire = document.getElementById("form");
-  formulaire.addEventListener("submit", function(event){
-      event.preventDefault();
-      checkInputs();
-      if(basketProduct.length == 0){
-          alert("Votre panier est vide");
-      }else{
-          let name = document.getElementById("name").value;
-          let firstname = document.getElementById("firstname").value;
-          let address = document.getElementById("address").value;
-          let city = document.getElementById("city").value;
-          let email = document.getElementById("email").value;
+let formulaire = document.getElementById("form");
+formulaire.addEventListener("submit", function(event){
+    event.preventDefault();
+    checkInputs();
+    if(basketProduct.length == 0){
+        alert("Votre panier est vide, veuillez sélectionner un article");
+    }else{
+        let name = document.getElementById("name").value;
+        let firstname = document.getElementById("firstname").value;
+        let address = document.getElementById("address").value;
+        let city = document.getElementById("city").value;
+        let email = document.getElementById("email").value;
            
           
-          ////////// création objet //////////
+        ////////// création objet //////////
   
-          let contact = new Contact (name, firstname, email, address, city);
+        let contact = new Contact (name, firstname, email, address, city);
           
-          let products = [];
+        let products = [];
       
-          for (let i = 0; i < basketProduct.length; i++){
-              basketProduct[i].id;
-              products.push(basketProduct[i].id);
-          }
+        for (let i = 0; i < basketProduct.length; i++){
+            basketProduct[i].id;
+            products.push(basketProduct[i].id);
+        }
   
-          /////////////// Envoie des données récupérées/////////
+        /////////////// Envoie des données récupérées/////////
   
-          let data = new Order(contact, products);
-          post("http://localhost:3000/api/cameras/order", data).then(function(response){
-              localStorage.setItem("basketContents", JSON.stringify(data)); 
-              localStorage.setItem("order", JSON.stringify({ id: response.orderId, total: total }));
-              alert("Formulaire envoyé"); 
-              window.location.assign("confirmation.html");
-          }).catch(function(err){
-                  console.log(err);
-              if(err == 0){
-                  alert("serveur Hors Service");
-              }
-          });
-       
-      }     
-  });  
+        let data = new Order(contact, products);
+        post("http://localhost:3000/api/cameras/order", data).then(function(response){
+            localStorage.setItem("basketContents", JSON.stringify(data)); 
+            localStorage.setItem("order", JSON.stringify({ id: response.orderId, total: total }));
+            alert("Formulaire envoyé"); 
+            window.location.assign("confirmation.html");
+        }).catch(function(err){
+            console.log(err);
+            if(err == 0){
+            alert("serveur Hors Service");
+            }
+        });
+    }     
+});  
