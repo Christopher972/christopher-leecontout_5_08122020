@@ -1,3 +1,4 @@
+
 function get (url){
     const promise = new Promise (function (resolve){
         let request = new XMLHttpRequest ();
@@ -14,9 +15,10 @@ function get (url){
 
 
 
+
  //////////////////////////////////// Envoie des données à l'API//////////////////////////
  
-function post (url,data){
+ function post (url,data){
     const promise = new Promise (function (resolve){
         let request = new XMLHttpRequest ();
         request.open("POST", url);

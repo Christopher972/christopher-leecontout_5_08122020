@@ -1,7 +1,7 @@
 ///////////// Crétation de la constante contenant L'Id /////////////
 
 const params = new URLSearchParams( window.location.search);
- const id = params.get("id");
+const id = params.get("id");
     
 ///////////// Information du Produit dans le code HTML /////////
 
@@ -75,7 +75,7 @@ get("http://localhost:3000/api/cameras/" + id)
 })
     .catch(function (err){
     console.log (err);
-    if (err === 0){
+    if (err == 0){
         alert ("serveur Hors Service");
     }
 });

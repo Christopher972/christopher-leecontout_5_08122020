@@ -95,7 +95,7 @@ function addBasketProduct(camera, basketInfo){
     tabLine.appendChild(price);
     tabLine.appendChild(trash);
 
-    const totalPrice = document.getElementById("totalPrice") /////// Affichage prix total 
+    const totalPrice = document.getElementById("totalPrice"); /////// Affichage prix total 
     total += basketInfo.price/100 * camera.quantity ;
     totalPrice.innerHTML = total + "€";        
 } 

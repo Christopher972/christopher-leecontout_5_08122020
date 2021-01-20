@@ -39,6 +39,7 @@ function addProductsList(products,section){
 get("http://localhost:3000/api/cameras")
 .then (function (products) {
 const section = document.getElementsByClassName("row");
+console.log(products);
 
 ////////////////////////////////////  Tableau des appareils photos /////////////////////////////////////
 
@@ -48,7 +49,7 @@ for (let i=0; i< products.length; i++){
   })
   .catch(function (err){
   console.log (err);
-  if (err === 0){
+  if (err == 0){
     alert ("serveur Hors Service");
   }
   });
