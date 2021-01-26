@@ -1,6 +1,6 @@
 Body 
 {
-    background-image:url(img/papierPeintBeige.jpg);
+    background-image: url(img/papierPeintBeige.jpg);
 }
 
 header, footer
@@ -10,7 +10,7 @@ header, footer
 
 h1
 {
-    color :#6a46b3;
+    color: #6a46b3;
     font-weight: bold;
 }
 
@@ -21,9 +21,9 @@ figure, #sectionConfirmation, #emptyBasket
 
 .list-middot > li:not(:last-child) ::after
 {
-    content:"\00b7";
+    content: "\00b7";
     margin: 1rem;
-    color:black;
+    color: black;
 }
  
 a
@@ -36,19 +36,19 @@ select
     display: flex;
 }
 
-.product_price,option,label
+.product_price, option, label
 {
     font-weight: bold;
 }
 
 #bouton,.btn, h1, h2, h4, a
 {
-    font-style:italic;
+    font-style: italic;
 }
 
 #emptyBasket, #infoBasket
 { 
-    display: none ;
+    display: none;
 }
 
 

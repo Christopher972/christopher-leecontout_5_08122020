@@ -1,6 +1,6 @@
 ////////////// formulaire et commande produit//////
-class Contact {
-    constructor(name, firstname, mail, address, city) {
+class Contact{
+    constructor(name, firstname, mail, address, city){
         this.lastName = name;
         this.firstName = firstname;
         this.email = mail;
@@ -9,8 +9,8 @@ class Contact {
     }
 }
 
-class Order {
-    constructor(contact, products) {
+class Order{
+    constructor(contact, products){
         this.contact = contact;
         this.products = products;
     }
