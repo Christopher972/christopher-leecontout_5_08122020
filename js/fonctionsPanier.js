@@ -14,7 +14,10 @@ function addToBasket(quantityProduct){
 
 function numberArticleNav(){
     let quantityBasket = document.getElementById('quantityBasket');
-    if(basketProduct == 0 ){
+    if(quantityBasket === null){
+        return;
+    }
+    if(basketProduct == 0){
         quantityBasket.innerHTML = '0';
         document.getElementById('emptyBasket').style.display = 'block';
         console.log('le panier est vide');
