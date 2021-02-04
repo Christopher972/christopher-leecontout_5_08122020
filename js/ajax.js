@@ -5,7 +5,7 @@ const entrypointApi = 'http://localhost:3000/api/';//// Variable globale de l'ur
 function get (url){
     const promise = new Promise(function(resolve, reject){
         let request = new XMLHttpRequest ();
-        request.open('GET', entrypointApi + url);
+        request.open('GET', entrypointApi + url );
         request.onreadystatechange = function(){
             if (this.readyState == XMLHttpRequest.DONE && this.status == 200){
                 resolve(JSON.parse(this.responseText));    
