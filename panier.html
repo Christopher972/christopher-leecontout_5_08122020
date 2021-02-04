@@ -20,7 +20,7 @@
                 <div class="row d-block">
                     <nav class="navbar navbar-expand-lg navbar-light">
                         <a class="navbar-brand" href="index.html">
-                          <img src="img/logo_orinoco.png" width="180" height="50" alt= "logo du site Orinoco">
+                          <img src="img/logo_orinoco.png" width="180" height="50" alt= "logo du site Orinoco" class="logo">
                         </a>
                         <button class="navbar-toggler" 
                                 type="button" 
@@ -43,21 +43,22 @@
             </div>
         </header>
         <main>
-            <section class="container-sm">
+            <section class="container-fluid">
                 <h1 class ="text-center">Votre panier</h1>
-                <article class=" row justifyContent-md-center">
+                <article class=" row justify-content-md-center">
                     <div class="col">
                         <div id=" basket" class="offset-1 col-10 col-md-2 offset-md-5 mt-3">
                             <h5 id="emptyBasket" class="text-center">Votre Panier est vide</h5>
                         </div> 
                     </div>
                 </article>
-                <div id="infoBasket">
-                    <table class="table table-striped table-bordered table-sm mt-4 ">
+                <div id="infoBasket" class = " row justify-content-md-center">
+                    <table class="table table-striped table-bordered table-sm mt-4 table-responsive">
                       <thead class="thead-dark text-center">
                         <tr>
                           <th scope ="col">Article sélectionné</th>
                           <th scope ="col">Nom</th>
+                          <th scope= "col">Optique</th>
                           <th scope ="col">Quantité</th>
                           <th scope ="col">Prix</th>
                           <th scope ="col">Suppression</th>
@@ -65,7 +66,7 @@
                       </thead>
                       <tbody id="basketArticle" class="text-center font-weight-bold"></tbody>
                       <tr>
-                        <td class="text-right font-weight-bold" colspan="4">TOTAL</td>
+                        <td class="text-right font-weight-bold" colspan="5">TOTAL</td>
                         <td id="totalPrice" class="text-center font-weight-bold"></td>
                       </tr>
                     </table>

@@ -20,6 +20,9 @@ function addBasketProduct(camera, basketInfo){
     const name = document.createElement('td');
     name.innerHTML = basketInfo.name;
 
+    const lenseSelected =document.createElement('td');
+    lenseSelected.innerHTML = camera.lenses;
+
     const number = document.createElement('td');
 
     let less = document.createElement('i');    ///////// Ajout bouton quantité moins 
@@ -59,7 +62,7 @@ function addBasketProduct(camera, basketInfo){
         quantityProduct.innerHTML = camera.quantity;
         total -= basketInfo.price/100;
         totalPrice.innerHTML = total + '€';
-        localStorage.setItem('basketContents',JSON.stringify(basketProduct));
+        localStorage.setItem('basketContents', JSON.stringify(basketProduct));
         if(lessQuantity <= 1){
             document.querySelector('.quantityLess').style.display = 'none';
         }
@@ -74,7 +77,7 @@ function addBasketProduct(camera, basketInfo){
         quantityProduct.innerHTML = camera.quantity;
         total += basketInfo.price/100;
         totalPrice.innerHTML = total + '€';
-        localStorage.setItem ('basketContents',JSON.stringify(basketProduct));
+        localStorage.setItem ('basketContents', JSON.stringify(basketProduct));
         if(moreQuantity > 1){
             document.querySelector('.quantityLess').style.display = 'inline';
         }
@@ -87,6 +90,7 @@ function addBasketProduct(camera, basketInfo){
     tbody.appendChild(tabLine);
     tabLine.appendChild(img);
     tabLine.appendChild(name);
+    tabLine.appendChild(lenseSelected)
     tabLine.appendChild(number);
     tabLine.appendChild(price);
     tabLine.appendChild(trash);

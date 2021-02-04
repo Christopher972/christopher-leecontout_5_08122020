@@ -4,8 +4,8 @@ let  basketProduct = JSON.parse(localStorage.getItem('basketContents')) || [];
 
 //////////////////////////////// nombre d'articles et produit ajouté au local storage //////////////////
 
-function addToBasket(quantityProduct){  
-    let product = new Product(id, quantityProduct);
+function addToBasket(quantityProduct, lenseSelected){  
+    let product = new Product(id, quantityProduct, lenseSelected);
     basketProduct.push(product);
     localStorage.setItem('basketContents', JSON.stringify(basketProduct));
 } 
@@ -25,7 +25,7 @@ function numberArticleNav(){
         let numberArticle = 0;
         document.getElementById('infoBasket').style.display = 'block';
         JSON.parse(localStorage.getItem('basketContents')).forEach((camera)=>{
-            numberArticle += parseInt(camera.quantity);
+            numberArticle += camera.quantity;
             quantityBasket.textContent = numberArticle;
            
         });

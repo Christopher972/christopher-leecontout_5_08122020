@@ -58,8 +58,10 @@ function addProduct(product){
  //////////////////// Ajouter produit au panier /////////////////
 
     button.addEventListener('click', function(){
+        const lenses = document.getElementsByTagName('select');
+        let lenseSelected = lenses[0].value;
         let quantityProduct = 1; 
-        addToBasket(quantityProduct);
+        addToBasket(quantityProduct, lenseSelected);
         alert('Article ajouté au panier avec succès');
     });
 } 
