@@ -9,7 +9,7 @@ function addProduct(product){
     const container = document.getElementById('productFocus');
     
     const figure = document.createElement('figure');
-    figure.setAttribute('class','product offset-1 col-10 col-md-6 offset-md-3 mt-5 mb-5 p-3');
+    figure.setAttribute('class','product offset-1 col-2 col-md-6 offset-md-3 mt-5 mb-5 p-3');
 
     const img = document.createElement('img');
     img.setAttribute('src', product.imageUrl);
