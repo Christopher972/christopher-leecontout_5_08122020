@@ -14,7 +14,7 @@ function addBasketProduct(camera, basketInfo){
     const image = document.createElement('img');
     image.innerHTML = basketInfo.imageUrl;
     image.setAttribute('src', basketInfo.imageUrl);
-    image.setAttribute('width','30%');
+    image.setAttribute('width','35%');
     img.appendChild(image);
 
     const name = document.createElement('td');
